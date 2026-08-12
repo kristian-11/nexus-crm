@@ -13,6 +13,21 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.auth-alert {
+    display: none;
+    background-color: #fdecea;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.auth-alert.show {
+  display: block;
+}
+
 .login-container {
     display: flex;
     flex-direction: column;

@@ -17,6 +17,18 @@ const clientes = [
     estado: "activo",
     empresa: "analitycs",
   },
+  {
+    nombre: "Ana Torres",
+    email: "anatorres@nexus.com",
+    estado: "inactivo",
+    empresa: "jk solutions",
+  },
+  {
+    nombre: "Luis Fernández",
+    email: "luisfernandez@nexus.com",
+    estado: "activo",
+    empresa: "jk Solutions",
+  }
 ];
 
 function renderClients() {
@@ -27,7 +39,7 @@ function renderClients() {
       <div class="client-card">
         <h3>${cliente.nombre}</h3>
         <p>${cliente.email}</p>
-        <p>${cliente.estado}</p>
+        <p class="badge badge-${cliente.estado}">${cliente.estado}</p>
         <p>${cliente.empresa}</p>
       </div>
     `;

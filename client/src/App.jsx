@@ -1,3 +1,5 @@
+import ClientCard from './components/ClientCard';
+
 const clientes = [
   {
     nombre: "Juan Pérez",
@@ -35,12 +37,7 @@ function App() {
   return (
     <>
       {clientes.map((cliente) => (
-        <div key={cliente.email}>
-          <h3>{cliente.nombre}</h3>
-          <p>Email: {cliente.email}</p>
-          <p>Estado: {cliente.estado}</p>
-          <p>Empresa: {cliente.empresa}</p>
-        </div>
+        <ClientCard key={cliente.email} cliente={cliente} />
       ))}
     </>
   );

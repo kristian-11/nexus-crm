@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import ClientCard from './components/ClientCard';
 
 const clientes = [
@@ -33,14 +34,28 @@ const clientes = [
   }
 ];
 
+
 function App() {
+  const [busqueda, setBusqueda] = useState('');
+  const filteredClients = clientes.filter((cliente) =>
+  cliente.nombre.toLowerCase().includes(busqueda.toLowerCase())
+);
   return (
     <>
-      {clientes.map((cliente) => (
+      <input
+        type="text"
+        placeholder="Buscar cliente..."
+        value={busqueda}
+        onChange={(e) => setBusqueda(e.target.value)}
+      />
+      {filteredClients.length === 0 && <p>No se encontraron clientes.</p>}
+      {filteredClients.map((cliente) => (
         <ClientCard key={cliente.email} cliente={cliente} />
       ))}
     </>
   );
 }
+
+
 
 export default App

@@ -18,6 +18,7 @@ CRM ligero para pequeños negocios. Cada funcionalidad responde a un caso de uso
 - **Sprint 3:** Validación de formulario con JavaScript: campos obligatorios y longitud mínima de contraseña, con mensajes de error específicos.
 - **Sprint 4:** Dashboard de clientes con datos simulados (mock data), renderizado dinámico desde un array de objetos.
 - **Sprint 5:** Estilos del dashboard con CSS Grid responsive y badges de estado por color.
+- **Sprint 6-8 (React):** migración progresiva a React — componentización (`ClientCard`), y búsqueda de clientes en tiempo real con `useState` y `.filter()`.
 
 ## Retos técnicos y decisiones de arquitectura
 

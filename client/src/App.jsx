@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ClientCard from './components/ClientCard';
+import SearchBar from './components/SearchBar';
 
 const clientes = [
   {
@@ -42,12 +43,7 @@ function App() {
 );
   return (
     <>
-      <input
-        type="text"
-        placeholder="Buscar cliente..."
-        value={busqueda}
-        onChange={(e) => setBusqueda(e.target.value)}
-      />
+      <SearchBar searchTerm={busqueda} onSearch={setBusqueda} />
       {filteredClients.length === 0 && <p>No se encontraron clientes.</p>}
       {filteredClients.map((cliente) => (
         <ClientCard key={cliente.email} cliente={cliente} />

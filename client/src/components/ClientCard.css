@@ -1,0 +1,37 @@
+.client-card {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.client-card h3 {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #1a1a1a;
+}
+
+.client-info {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-activo {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-inactivo {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}

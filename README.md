@@ -20,6 +20,7 @@ CRM ligero para pequeños negocios. Cada funcionalidad responde a un caso de uso
 - **Sprint 5:** Estilos del dashboard con CSS Grid responsive y badges de estado por color.
 - **Sprint 6-8 (React):** migración progresiva a React — componentización (`ClientCard`), y búsqueda de clientes en tiempo real con `useState` y `.filter()`.
 - **Sprint 9:** separación de `SearchBar` como componente independiente, comunicación hijo→padre mediante props de función, y estilos propios por componente (CSS Modules por archivo).
+- **Sprint 10:** migración completa a SPA con React Router — login (`LoginPage`) y dashboard (`DashboardPage`) como rutas independientes, con redirección automática tras validación exitosa.
 
 ## Retos técnicos y decisiones de arquitectura
 

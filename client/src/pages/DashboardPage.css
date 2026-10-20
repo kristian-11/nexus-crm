@@ -1,0 +1,26 @@
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px; 
+}
+
+.dashboard-container h1 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 24px; 
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 24px; 
+}
+
+.dash-no-results {
+    
+    text-align: center;
+    color: #666666;
+    font-size: 18px; 
+    margin-top: 32px; 
+}

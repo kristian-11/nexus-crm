@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import ClientCard from '../components/ClientCard';
-import SearchBar from '../components/SearchBar';
+import { useState } from "react";
+import ClientCard from "../components/ClientCard";
+import SearchBar from "../components/SearchBar";
+import "./DashboardPage.css";
 
 const clientes = [
   {
@@ -32,26 +33,30 @@ const clientes = [
     email: "luisfernandez@nexus.com",
     estado: "activo",
     empresa: "jk Solutions",
-  }
+  },
 ];
 
-
 function DashboardPage() {
-  const [busqueda, setBusqueda] = useState('');
+  const [busqueda, setBusqueda] = useState("");
   const filteredClients = clientes.filter((cliente) =>
-  cliente.nombre.toLowerCase().includes(busqueda.toLowerCase())
-);
+    cliente.nombre.toLowerCase().includes(busqueda.toLowerCase()),
+  );
   return (
-    <>
+    <main className="dashboard-container">
+      <h1>Panel de Control</h1>
       <SearchBar searchTerm={busqueda} onSearch={setBusqueda} />
-      {filteredClients.length === 0 && <p>No se encontraron clientes.</p>}
-      {filteredClients.map((cliente) => (
-        <ClientCard key={cliente.email} cliente={cliente} />
-      ))}
-    </>
+
+      <div className="clients-grid">
+        {filteredClients.length === 0 && (
+          <p className="dash-no-results">No se encontraron clientes.</p>
+        )}
+
+        {filteredClients.map((cliente) => (
+          <ClientCard key={cliente.email} cliente={cliente} />
+        ))}
+      </div>
+    </main>
   );
 }
-
-
 
 export default DashboardPage;

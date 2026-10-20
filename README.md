@@ -4,12 +4,15 @@ CRM ligero para pequeños negocios. Cada funcionalidad responde a un caso de uso
 
 ## Stack actual
 
-- HTML5 semántico
-- CSS3 (Flexbox, Grid, metodología de nombres consistente)
-- JavaScript (Vanilla) — DOM, eventos, validación, renderizado dinámico
-- Git / GitHub con Conventional Commits
+- HTML5 semántico.
+- CSS3 (Flexbox, Grid, metodología de nombres consistente).
+- JavaScript — DOM, eventos, validación, renderizado dinámico.
+- Git / GitHub con Conventional Commits.
+- React — interfaces de usuario modulares basadas en componentes.
+- Vite — entorno de desarrollo y empaquetador rápido.
+- React Router — manejo de navegación y rutas de la aplicación.
 
-> Este proyecto evoluciona sprint a sprint. El stack se irá ampliando (React, Node.js, Express, SQL) conforme el producto lo requiera — no se incorpora tecnología sin una necesidad real que la justifique.
+> Este proyecto evoluciona sprint a sprint. El stack se irá ampliando (Node.js, Express, SQL) conforme el producto lo requiera — no se incorpora tecnología sin una necesidad real que la justifique.
 
 ## Progreso
 
@@ -19,8 +22,9 @@ CRM ligero para pequeños negocios. Cada funcionalidad responde a un caso de uso
 - **Sprint 4:** Dashboard de clientes con datos simulados (mock data), renderizado dinámico desde un array de objetos.
 - **Sprint 5:** Estilos del dashboard con CSS Grid responsive y badges de estado por color.
 - **Sprint 6-8 (React):** migración progresiva a React — componentización (`ClientCard`), y búsqueda de clientes en tiempo real con `useState` y `.filter()`.
-- **Sprint 9:** separación de `SearchBar` como componente independiente, comunicación hijo→padre mediante props de función, y estilos propios por componente (CSS Modules por archivo).
+- **Sprint 9:** separación de `SearchBar` como componente independiente, comunicación hijo→padre mediante props de función, y estilos propios por componente.
 - **Sprint 10:** migración completa a SPA con React Router — login (`LoginPage`) y dashboard (`DashboardPage`) como rutas independientes, con redirección automática tras validación exitosa.
+- **Sprint 11:** Limpieza de los estilos de la plantilla de Vite, estilos propios para login, dashboard y recuperación de contraseña, y validación del formato del correo en el formulario de acceso.
 
 ## Retos técnicos y decisiones de arquitectura
 
@@ -42,4 +46,8 @@ CRM ligero para pequeños negocios. Cada funcionalidad responde a un caso de uso
 
 ## Cómo correr el proyecto
 
-Al ser HTML/CSS/JS puro por ahora, basta con abrir `index.html` o `dashboard.html` con una extensión tipo Live Server, o directamente en el navegador.
+1. Entra a la carpeta del cliente: `cd client`
+2. Instala las dependencias: `npm install`
+3. Inicia el servidor de desarrollo: `npm run dev`
+
+- La versión inicial en JS puro se conserva como referencia, la app actual está en `client/`.

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import "./LoginPage.css";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,11 @@ function LoginPage() {
   function validateForm() {
     if (email === "" || password === "") {
       setErrorMessage("Todos los campos son obligatorios.");
+      return false;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      setErrorMessage("Ingresa un correo electrónico válido.");
       return false;
     }
 
@@ -31,33 +37,47 @@ function LoginPage() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="email">Correo electrónico</label>
+    <main className="login-container">
 
-        <input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-      </div>
+      <h1>Iniciar sesión</h1>
 
-      <div>
-        <label htmlFor="password">Contraseña</label>
+      {errorMessage && (
+        <div className="auth-alert" aria-live="assertive">
+          {errorMessage}
+        </div>
+      )}
 
-        <input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </div>
+      <form onSubmit={handleSubmit} noValidate>
+        <div className="form-group">
+          <label htmlFor="email">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </div>
 
-      {errorMessage && <p>{errorMessage}</p>}
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
 
-      <button type="submit">Iniciar sesión</button>
-    </form>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <Link to="/reset-password" className="forgot-password">
+            ¿Olvidaste tu contraseña?
+          </Link>
+        </div>
+
+        <button type="submit" className="btn-submit">Iniciar sesión</button>
+      </form>
+    </main>
   );
 }
 

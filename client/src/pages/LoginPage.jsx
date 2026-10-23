@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./LoginPage.css";
 
-function LoginPage() {
+function LoginPage({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+ 
 
   function validateForm() {
     if (email === "" || password === "") {
@@ -32,6 +33,7 @@ function LoginPage() {
     event.preventDefault();
 
     if (validateForm()) {
+      onLogin(true);
       navigate("/dashboard");
     }
   }
@@ -42,7 +44,7 @@ function LoginPage() {
       <h1>Iniciar sesión</h1>
 
       {errorMessage && (
-        <div className="auth-alert" aria-live="assertive">
+        <div className="auth-alert" role="alert">
           {errorMessage}
         </div>
       )}
